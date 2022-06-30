@@ -2,6 +2,8 @@ const mario = document.querySelector('.mario')
 const pipe = document.querySelector('.pipe')
 const cloud = document.querySelector('.cloud')
 const over = document.querySelector('.over')
+const start = document.querySelector('.start')
+const jogo = document.querySelector('.jogo')
 
 const jump = () => {
   mario.classList.add('jump')
@@ -9,6 +11,11 @@ const jump = () => {
   setTimeout(() => {
     mario.classList.remove('jump')
   }, 500)
+}
+
+const startFunc = () => {
+  start.style.display = 'none'
+  jogo.style.display = 'block'
 }
 
 const loop = setInterval(() => {
@@ -34,4 +41,6 @@ const loop = setInterval(() => {
     clearInterval(loop)
   }
 }, 10)
+
 document.addEventListener('keydown', jump)
+document.addEventListener('click', jump)
