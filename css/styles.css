@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.game-board {
+    width: 100%;
+    height: 500px;
+    border-bottom: 20px solid rgb(35, 160, 35);
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(#87ceeb, #e0f6ff);
+}
+
+.pipe {
+    position: absolute;
+    bottom: -25px;
+    width: 80px;
+    animation: pipe-animation 2s infinite linear;
+}
+
+@keyframes pipe-animation{
+    from{
+        right: -80px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/* ...........................................................  */
+
+.mario {
+    position: absolute;
+    width: 150px;
+    bottom: 0; 
+}
+
+.jump {
+    animation: jump 500ms ease-out;
+}
+
+@keyframes jump{
+    0% {
+        bottom: 0; 
+    }
+
+    40% {
+        bottom: 180px;
+    }
+
+    50% {
+        bottom: 180px;
+    }
+    
+    60% {
+        bottom: 180px;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+/* ...........................................................  */
+
+.cloud {
+    width: 550px;
+    position: absolute;
+    animation: cloud-animation 10s infinite linear;
+}
+
+@keyframes cloud-animation {
+    from {
+        right: -550px;
+    }
+
+    to {
+        right: 100%;
+    }
+}
+
+/* ...........................................................  */
+
+.over {
+    text-align: center;
+    padding: 120px 0;
+    display: none;
+}
+
+.game {
+    padding-bottom: 40px;
+    font-family: 'Press Start 2P', cursive;
+}
+
+.restart {
+    margin: 0 auto;
+    padding: 20px 25px;
+    font-family: 'Orbitron', sans-serif;
+
+    background-color: #d80036;
+    border: none;
+    border-radius: 10px;
+}
+
+.restart:hover {
+    cursor: pointer;
+}
